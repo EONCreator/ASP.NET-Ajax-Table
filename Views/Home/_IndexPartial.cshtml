@@ -1,0 +1,30 @@
+﻿@using WebApplication1.Models
+@model List<SomeTestClass>
+
+<table class="table">
+    <thead>
+        <tr>
+           <td>ID</td>
+           <td>Title</td>
+           <td>Data 1</td>
+           <td>Data 2</td>
+           <td>Data 3</td>
+           <td>Data 4</td>
+           <td><b>OtherTypeValue</b></td>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (SomeTestClass item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Title</td>
+            <td>@item.Data1</td>
+            <td>@item.Data2</td>
+            <td>@item.Data3</td>
+            <td>@item.Data4</td>
+            <td>@item.OtherTypeValue.Title</td>
+        </tr>
+    }
+    </tbody>
+</table>

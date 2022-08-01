@@ -1,0 +1,27 @@
+﻿@using WebApplication1.Models
+@model List<SomeTestClass>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<p>Как и описывалось в задании. Изначально отображаются 2,3 элементы, затем после нажатия на кнопку,
+    идет запрос на сервер, который возвращает нам 4,5 строки</p>
+</p>
+
+<button id="refreshButton" class="btn btn-success">Get filtered items</button>
+<script>
+    $("#refreshButton").click(function(){
+        $.ajax({
+            url: '@Url.Action("GetFilteredItems", "Home")',
+            type: 'GET',
+            success: function(response) {
+                $("#container").html(response)
+            }
+        });
+    })
+</script>
+
+
+<div id="container">
+    @{await Html.RenderPartialAsync("_IndexPartial", Model);}
+</div>
