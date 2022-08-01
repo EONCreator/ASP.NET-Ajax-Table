@@ -25,14 +25,14 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var result = new List<SomeTestClass>() { _items[0], _items[1] };
+            var result = new List<SomeTestClass>() { _items[1], _items[2] };
             return View(result);
         }
 
         [HttpGet]
         public ActionResult GetFilteredItems()
         {
-            var result = new List<SomeTestClass>() { _items[2], _items[3] };
+            var result = new List<SomeTestClass>() { _items[3], _items[4] };
             return PartialView("_IndexPartial", result);
         }
 
